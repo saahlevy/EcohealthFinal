@@ -1,0 +1,7 @@
+{
+  "name": "EcohealthV2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

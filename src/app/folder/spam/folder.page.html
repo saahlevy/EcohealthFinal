@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-padding">
+    <h3>Selecione a Ocorrência (obrigatório)</h3>
+    <ion-list>
+      <ion-item>
+        <ion-select [(ngModel)]="ocorrencia" aria-label="ocorrencia" placeholder="Selecione" [class.invalid]="formSubmitted && !ocorrencia">
+          <ion-select-option *ngFor="let item of ocorrencias" [value]="item">{{ item }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    
+    <h3>Selecione a Cidade (obrigatório)</h3>
+    <ion-list>
+      <ion-item>
+        <ion-select [(ngModel)]="cidadeOcorrencia" aria-label="cidadeOcorrencia" placeholder="Selecione" [class.invalid]="formSubmitted && !cidadeOcorrencia">
+          <!-- Gerando dinamicamente as opções de cidades de São Paulo -->
+          <ion-select-option *ngFor="let cidade of cidadesSp" [value]="cidade">{{ cidade }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    
+    <br>
+    <ion-input label="Comentário" label-placement="floating" fill="outline" placeholder="Escreva aqui" [(ngModel)]="comentario"></ion-input><br>
+
+    <ion-button (click)="onSubmit()">Enviar</ion-button>
+  </div>
+</ion-content>
+
+  

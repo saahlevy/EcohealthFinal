@@ -1,0 +1,127 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <strong class="capitalize">{{ folder }}</strong>
+  </div>
+  <div class="weather-container">
+    <div class="weather-temperature">
+      <div class="weather-temperature-value">
+        <div class="weather-temperature-principal">
+          <p>{{ temperature }}</p>
+          <p class="mini">°C</p>
+        </div>
+        <div class="weather-temperature-min-max">
+          <p class="red">{{ maxTemperature }}°</p>
+          <p class="blue">{{ minTemperature }}°</p>
+        </div>
+      </div>
+      <img alt="temperature-image" [src]="imageConditionURL" />
+    </div>
+    <div class="weather-information">
+      <div class="weather-information-item">
+        <img alt="temperature-image" src="https://cdn-icons-png.flaticon.com/512/1164/1164960.png" />
+        <div>
+          <p class="temperature-title">Vento</p>
+          <p>{{ wind }} km/h</p>
+        </div>
+      </div>
+      <div class="weather-information-item">
+        <img alt="temperature-image" [src]="imageConditionURL" />
+        <div>
+          <p class="temperature-title">Umidade</p>
+          <p>{{ humidity }}%</p>
+        </div>
+      </div>
+      <div class="weather-information-item">
+        <img alt="temperature-image" [src]="imageConditionURL" />
+        <div>
+          <p class="temperature-title">Chuva</p>
+          <p>{{ rain }}%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ion-padding">
+    <h2>Últimas notícias</h2>
+    <div
+      class="news-container"
+      onclick="window.open(`https://www.cnnbrasil.com.br/politica/eventos-climaticos-atingem-mais-a-periferia-diz-jader-filho-a-cnn/`)"
+      title="Clique para acessar"
+    >
+      <div class="news-card">
+        <div class="news-header">
+          <div class="news-logo">
+            <img
+              alt="Logo CNN"
+              src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.cnnbrasil.com.br/&size=32"
+            />
+            <div>
+              <p>CNN</p>
+            </div>
+          </div>
+          <div class="news-title">
+            <p>Eventos climáticos atingem mais a periferia, diz Jader Filho à CNN</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-container"
+      onclick="window.open(`https://www.cnnbrasil.com.br/politica/sistema-de-alerta-em-celulares-contra-desastres-naturais-esta-pronto-para-implementacao-e-pode-emitir-aviso-de-queimadas/`)"
+      title="Clique para acessar"
+    >
+      <div class="news-card">
+        <div class="news-header">
+          <div class="news-logo">
+            <img
+              alt="Logo CNN"
+              src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.cnnbrasil.com.br/&size=32"
+            />
+            <div>
+              <p>CNN</p>
+            </div>
+          </div>
+          <div class="news-title">
+            <p>Sistema de alerta em celulares contra desastres naturais está pronto para implementação e pode emitir aviso de queimadas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="news-container"
+      onclick="window.open(`https://exame.com/esg/desastres-naturais-vao-custar-us-151-bilhoes-anualmente-a-seguradoras/`)"
+      title="Clique para acessar"
+    >
+      <div class="news-card">
+        <div class="news-header">
+          <div class="news-logo">
+            <img
+              alt="Logo Exame"
+              src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://exame.com/&size=32"
+            />
+            <div>
+              <p>Exame</p>
+            </div>
+          </div>
+          <div class="news-title">
+            <p>Desastres naturais vão custar US$ 151 bilhões anualmente a seguradoras</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
